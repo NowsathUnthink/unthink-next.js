@@ -30,7 +30,7 @@ import person_16 from "../../images/newStaticPageImages/about/person_16.png";
 const Person = ({ image, name, designation, linkedn }) => {
 	return (
 		<div className='flex flex-col items-center text-center'>
-				<div className='relative w-200 lg:w-64 h-64 lg:h-80'>
+				<div className='relative h-40 w-40 md:w-200 md:h-200 lg:w-64 lg:h-64  '>
 					<Image 
 						src={image} 
 						alt={name}
