@@ -1,0 +1,32 @@
+.auth-header-container {
+	height: 75px;
+}
+
+.auth-container {
+	height: calc(100% - 75px);
+}
+
+.signup-form-container input,
+.signin-form-container input,
+.resetPassword-form-container input {
+	@apply text-white;
+}
+
+#signup_password, #signup_iCode,#signup_user_name, #signIn_password, #resetPassword_password {
+	@apply bg-transparent;
+}
+
+.signup_email {
+	.ant-input[disabled]{
+		color: black;
+	}
+}
+
+.need-help-section-container {
+	background-image: url('../../images/staticpageimages/auth_help_me_section_bg.svg');
+}
+
+//fix height for error message
+.auth-container .ant-form-item-with-help .ant-form-item-explain{
+	height: 24px;
+}
