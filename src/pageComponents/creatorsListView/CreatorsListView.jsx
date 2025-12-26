@@ -14,7 +14,7 @@ const CreatorsListView = ({ pageUser }) => {
 					{pageUser.creators.map((inf) => (
 						<Link
 							key={inf.user_id}
-							to={generateRoute(inf.user_id, inf.user_name)}
+							href={generateRoute(inf.user_id, inf.user_name)}
 							className='px-0'>
 							<div className='text-center'>
 								<div className='px-2 lg:px-4.5'>

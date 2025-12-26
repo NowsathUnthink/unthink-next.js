@@ -412,17 +412,12 @@ const WishListModal = ({
 	return (
 		<Drawer
 			placement='right'
-			visible={showWishlistModal}
+			open={showWishlistModal}
 			closable={false}
 			onClose={closeModal}
-			bodyStyle={{ padding: 0, background: "#F1F5F9" }}
+			styles={{ body: { padding: 0, background: "#F1F5F9" } }}
 			className={`backdrop-filter backdrop-blur-sm transition-none z-40`}
-			contentWrapperStyle={{
-				animation: "wishlistModal 500ms",
-				transition: "none ",
-				maxWidth: "448px",
-				width: "100%",
-			}}
+			classNames={{ wrapper: "wishlistModal" }}
 			zIndex={WISHLIST_MODAL_Z_INDEX}>
 			<div className='w-full h-auto'>
 				<div ref={wishlistBodyRef} className='max-w-md ml-auto h-full py-6'>

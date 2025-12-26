@@ -40,8 +40,8 @@ const RootStatic = () => {
 
 	return (
 		<div className='font-firaSans'>
-			<section className='lg:mt-32 max-w-340 md:max-w-748 lg:max-w-4xl xl:max-w-1260 mx-auto'>
-				<div className='max-w-340 md:max-w-748 lg:max-w-4xl mx-auto publisher_title_container text-center flex flex-col items-center'>
+			<section className='lg:mt-32 max-w-340 md:max-w-748 lg:max-w-4xl xl:max-w-1260 mx-auto px-5 md:px-0'>
+				<div className='w-full publisher_title_container text-center flex flex-col items-center'>
 					<h1 className='text-4xl lg:text-7xl text-lightgray-101 font-normal'>
 						Revolutionizing Consumer <br /> Experiences With AI
 					</h1>
@@ -53,13 +53,13 @@ const RootStatic = () => {
 				</div>
 			</section>
 
-			<section className='bg-slat-900 lg:mx-12 2xl:mx-72px p-5 lg:p-14 mt-24 lg:mt-36 relative'>
+			<section className='bg-slat-900 lg:mx-0 2xl:mx-0 p-5 lg:p-14 mt-24 lg:mt-36 relative'>
 				{/* <img
 					alt='try_it_now'
 					src={try_it_now}
 					className='absolute -top-24 md:-top-20 lg:-top-36 w-24 lg:w-auto'
 				/> */}
-				<div className='xl:max-w-screen-xl lg:max-w-4xl md:max-w-2xl max-w-sm w-full mx-auto'>
+				<div className='max-w-340 md:max-w-748 lg:max-w-4xl xl:max-w-1260 mx-auto'>
 					<div>
 						<h1 className='text-xl lg:text-xl-2 text-white lg:font-semibold '>
 							My collections and products
@@ -89,14 +89,14 @@ const RootStatic = () => {
 					</div>
 				</div>
 				{carouselItems?.length >= 5 ? (
-					<div className='max-w-340 md:max-w-748 lg:max-w-4xl xl:max-w-6xl-3 mx-auto mt-7 lg:mt-14'>
+					<div className='max-w-340 md:max-w-748 lg:max-w-4xl xl:max-w-1260 mx-auto mt-7 lg:mt-14'>
 						<CarousalContainer items={carouselItems} hideTitle />
 					</div>
 				) : null}
 			</section>
 
-			<section className='mt-28 lg:mt-52'>
-				<div className='max-w-340 md:max-w-748 lg:max-w-4xl xl:max-w-7xl xl:px-8 mx-auto text-center xl:text-left flex xl:gap-8 flex-col-reverse xl:flex-row items-center justify-between'>
+			<section className='mt-28 lg:mt-52 px-5 md:px-0'>
+				<div className='max-w-340 md:max-w-748 lg:max-w-4xl xl:max-w-1260 mx-auto text-center xl:text-left flex xl:gap-8 flex-col-reverse xl:flex-row items-center justify-between'>
 					<div className='max-w-xl-1 w-full'>
 						<h1 className='text-3xl lg:text-6xl text-lightgray-101 font-normal mt-10 lg:mt-16'>
 							<span className='font-bold'>
@@ -142,8 +142,8 @@ const RootStatic = () => {
 				</div>
 			</section>
 
-			<section className='mb-28 lg:mb-52 mt-9 lg:mt-24'>
-				<div className='max-w-340 md:max-w-748 lg:max-w-4xl xl:max-w-7xl mx-auto xl:px-8 font-extrabold text-lightgray-104 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0'>
+			<section className='mb-28 lg:mb-52 mt-9 lg:mt-24 px-5 md:px-0'>
+				<div className='max-w-340 md:max-w-748 lg:max-w-4xl xl:max-w-1260 mx-auto font-extrabold text-lightgray-104 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0'>
 					<Link
 						className='text-current cursor-pointer border border-current hover:text-blue-107 rounded-xl px-3 py-1'
 						href='/brands'>

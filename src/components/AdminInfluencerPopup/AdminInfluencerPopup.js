@@ -73,7 +73,7 @@ const AdminInfluencerPopup = () => {
                     Select Your Role
                 </h2>
             }
-            visible={isModalVisible}
+            open={isModalVisible}
             footer={null}
             closable={false}
             centered

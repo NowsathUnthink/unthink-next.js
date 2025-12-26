@@ -24,7 +24,7 @@ const ProductDetailsCopyModal = ({
 		<div>
 			<Modal
 				title='Product Urls'
-				visible={isOpen}
+				open={isOpen}
 				onCancel={onClose}
 				cancelText='Close'
 				okButtonProps={{ className: "hidden" }}>

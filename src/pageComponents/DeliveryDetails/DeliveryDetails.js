@@ -344,20 +344,21 @@ const DeliveryDetails = () => {
 						) : (
 							<div>
 								{products.map((item, index) => (
-									<div key={index} className='border-b pb-8 mb-6'>
-										<div className='flex lg:gap-10 gap-3  md:p-4 w-full items-start'>
-											<Link href={`/product/${item.mfr_code}`}>
-												<img
-													className='md:h-40 md:w-32 h-14  w-14 object-cover rounded-2xl '
-													src={item.image}
-													alt={item.name}
-												/>
-											</Link>
-											<div className='flex flex-col flex-1'>
-												<Link
-												href={`/product/${item.mfr_code}`}
-													className='p-0 m-0'>
-													<h4 className='md:text-2xl text-xl font-semibold text-black-100'>
+									item && item.mfr_code ? (
+										<div key={index} className='border-b pb-8 mb-6'>
+											<div className='flex lg:gap-10 gap-3  md:p-4 w-full items-start'>
+												<Link href={`/product/${item.mfr_code}`}>
+													<img
+														className='md:h-40 md:w-32 h-14  w-14 object-cover rounded-2xl '
+														src={item.image}
+														alt={item.name}
+													/>
+												</Link>
+												<div className='flex flex-col flex-1'>
+													<Link
+													href={`/product/${item.mfr_code}`}
+														className='p-0 m-0'>
+														<h4 className='md:text-2xl text-xl font-semibold text-black-100'>
 														{item.name}
 													</h4>
 												</Link>
@@ -442,6 +443,7 @@ const DeliveryDetails = () => {
 											</div>
 										</div>
 									</div>
+									) : null
 								))}
 								<div>
 									<p

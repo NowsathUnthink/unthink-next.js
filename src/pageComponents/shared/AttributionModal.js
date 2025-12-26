@@ -306,7 +306,7 @@ const AttributionModal = ({
 		<div>
 			<Modal
 				title={statsModalTitle || "Audience stats:"}
-				visible={showAttributionModal}
+				open={showAttributionModal}
 				onCancel={handleCloseAttributionModal}
 				cancelText='Close'
 				okButtonProps={{ className: "hidden" }}>

@@ -73,7 +73,7 @@ const Header = ({
 				} fixed w-full top-0`}
 				ref={ref}>
 				<div
-					className={`lg:max-w-4xl xl:max-w-1260 mx-5 lg:mx-auto h-full flex justify-between items-center`}>
+					className={`max-w-340 md:max-w-748 lg:max-w-4xl xl:max-w-1260 mx-auto px-5 md:px-0 h-full flex justify-between items-center`}>
 					<div className='flex items-center text-white h-full'>
 						<img
 							src={unthink_ai_logo_white}
@@ -258,23 +258,25 @@ const Header = ({
 							</div>
 							<div className='flex flex-col w-full items-center justify-center p-5'>
 								{MenuItems.map((item, index) =>
-									item.url === PATH_BLOG ? (
-										<a
-											onClick={() => setShowMenu(false)}
-											className='my-2.5'
-											href={item.url}
-											key={index}>
-											{item.title}
-										</a>
-									) : (
-										<Link
-											onClick={() => setShowMenu(false)}
-											className='my-2.5'
-										href={item.url}
-											key={index}>
-											{item.title}
-										</Link>
-									)
+									item && item.url ? (
+										item.url === PATH_BLOG ? (
+											<a
+												onClick={() => setShowMenu(false)}
+												className='my-2.5'
+												href={item.url}
+												key={index}>
+												{item.title}
+											</a>
+										) : (
+											<Link
+												onClick={() => setShowMenu(false)}
+												className='my-2.5'
+												href={item.url}
+												key={index}>
+												{item.title}
+											</Link>
+										)
+									) : null
 								)}
 								{showSignIn && (
 									<button

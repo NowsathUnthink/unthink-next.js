@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import Head from 'next/head';
 import { Helmet } from 'react-helmet';
 
@@ -42,7 +42,8 @@ import {
 function MyApp({ Component, pageProps }) {
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
+  // Use useLayoutEffect to set mounted state before browser paints
+  useLayoutEffect(() => {
     setMounted(true);
     // Initialize user tracking
     checkAndGenerateUserId();

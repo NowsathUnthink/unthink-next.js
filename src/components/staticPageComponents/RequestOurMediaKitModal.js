@@ -32,7 +32,7 @@ const RequestOurMediaKitModal = ({
 	return (
 		<Modal
 			title='Request our media kit'
-			visible={showModal}
+			open={showModal}
 			onCancel={onCloseModal}
 			footer={null}
 			// okButtonProps={{ className: "hidden" }}

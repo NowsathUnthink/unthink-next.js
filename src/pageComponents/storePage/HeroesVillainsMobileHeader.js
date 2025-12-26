@@ -74,7 +74,7 @@ const HeroesVillainsMobileHeader = ({ showProfileIcon, setShowMenu }) => {
 
 			<Drawer
 				closable={true}
-				visible={openMenu}
+				open={openMenu}
 				placement='left'
 				width={350}
 				title=' '
@@ -84,14 +84,16 @@ const HeroesVillainsMobileHeader = ({ showProfileIcon, setShowMenu }) => {
 						onClick={() => setOpenMenu(false)}
 					/>
 				}
-				bodyStyle={{
-					padding: "0px",
+				styles={{
+					body: {
+						padding: "0px",
+					}
 				}}
 				zIndex={SIMILAR_MODAL_Z_INDEX}
 				className='heroesVillains_mobile_drawer_menu'>
 				<div className='px-5'>
-					{heroesVillainsHeaderMenu.map((menu) => {
-						return (
+					{heroesVillainsHeaderMenu && heroesVillainsHeaderMenu.map((menu) => {
+						return menu && menu.href ? (
 							<div
 								key={menu.label}
 								className='flex flex-col border-b border-gray-107'>
@@ -120,20 +122,20 @@ const HeroesVillainsMobileHeader = ({ showProfileIcon, setShowMenu }) => {
 
 								{menu?.children && activeMenu.includes(menu.label)
 									? menu.children?.map((subMenu) => {
-											return (
-												<a
-													key={subMenu.label}
-													className='text-sm text-black-101 font-light py-1.75 px-0 cursor-pointer'
-													href={subMenu.href}
-													target='_blank'>
-													{subMenu.label}
-												</a>
-											);
-									  })
+										return subMenu && subMenu.href ? (
+											<a
+												key={subMenu.label}
+												className='text-sm text-black-101 font-light py-1.75 px-0 cursor-pointer'
+												href={subMenu.href}
+												target='_blank'>
+												{subMenu.label}
+											</a>
+										) : null;
+									})
 									: null}
 							</div>
-						);
-					})}
+					) : null;
+				})}
 				</div>
 			</Drawer>
 		</div>

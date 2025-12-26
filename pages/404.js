@@ -45,7 +45,7 @@ const NotFoundPage = () => {
 					</>
 				) : null}
 				<br />
-				<Link className='text-indigo-600 underline' to='/'>
+				<Link className='text-indigo-600 underline' href='/'>
 					Go home
 				</Link>
 			</p>

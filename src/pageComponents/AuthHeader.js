@@ -7,7 +7,7 @@ import { HomeOutlined } from "@ant-design/icons";
 import Logo from "../images/staticpageimages/logo_white.png";
 import HeaderUser from "../images/staticpageimages/auth_header_user.svg";
 import { is_store_instance, current_store_name } from "../constants/config";
-import { PATH_ROOT, PATH_STORE } from "../constants/codes";
+import { PATH_ROOT, PATH_STORE, MY_PROFILE, PROFILE } from "../constants/codes";
 
 export default function AuthHeader({
 	userTextLink,

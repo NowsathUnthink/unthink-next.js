@@ -1,4 +1,4 @@
-import OnboardingPage from "../../src/pageComponents/brands/Onboarding";
+import OnboardingPage from "../../src/pageComponents/brands/Onboarding.jsx";
 
 export default OnboardingPage;
 

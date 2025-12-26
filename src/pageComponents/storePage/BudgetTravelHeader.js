@@ -53,13 +53,15 @@ const exploreSubmenu = [
 const getExploreMenuOptions = () => {
 	return (
 		<ul className='z-10 pt-2 pb-6 px-5 w-52 top-3 shadow rounded-md bg-black-200 text-teal-101'>
-			{exploreSubmenu.map((item) => (
-				<li className='mt-4'>
-					<a className='hover:text-yellow-101 font-normal' href={item.href}>
-						{item.title}
-					</a>
-				</li>
-			))}
+			{exploreSubmenu && exploreSubmenu.map((item) => 
+				item && item.href ? (
+					<li className='mt-4' key={item.title}>
+						<a className='hover:text-yellow-101 font-normal' href={item.href}>
+							{item.title}
+						</a>
+					</li>
+				) : null
+			)}
 		</ul>
 	);
 };
@@ -82,57 +84,69 @@ const BudgetTravelHeader = () => {
 				{/* <div className='pl-3 xl:pl-4 lg:flex'>
 					<a
 						className='cursor-pointer p-0 uppercase text-xs font-bold hover:text-yellow-101'
-						href={btHeaderOptions.clubdiscounts}>
+						href={btHeaderOptions?.clubdiscounts}>
 						Club Discounts
 					</a>
 				</div> */}
-				<div className='pl-3 xl:pl-4 lg:flex'>
-					<a
-						className='cursor-pointer p-0 uppercase text-xs font-bold hover:text-yellow-101'
-						href={btHeaderOptions.discoverusa}>
-						Discover USA
-					</a>
-				</div>
-				<div className='pl-3 xl:pl-4 lg:flex'>
-					<a
-						className='cursor-pointer p-0 uppercase text-xs font-bold hover:text-yellow-101'
-						href={btHeaderOptions.deals}>
-						Real deals
-					</a>
-				</div>
+				{btHeaderOptions?.discoverusa && (
+					<div className='pl-3 xl:pl-4 lg:flex'>
+						<a
+							className='cursor-pointer p-0 uppercase text-xs font-bold hover:text-yellow-101'
+							href={btHeaderOptions.discoverusa}>
+							Discover USA
+						</a>
+					</div>
+				)}
+				{btHeaderOptions?.deals && (
+					<div className='pl-3 xl:pl-4 lg:flex'>
+						<a
+							className='cursor-pointer p-0 uppercase text-xs font-bold hover:text-yellow-101'
+							href={btHeaderOptions.deals}>
+							Real deals
+						</a>
+					</div>
+				)}
 				{/* <div className='pl-3 xl:pl-4 lg:flex'>
 					<a
 						className='cursor-pointer p-0 uppercase text-xs font-bold hover:text-yellow-101'
-						href={btHeaderOptions.sweepstakes}>
+						href={btHeaderOptions?.sweepstakes}>
 						Sweepstakes
 					</a>
 				</div> */}
-				<div className='pl-3 xl:pl-4 lg:flex'>
-					<a
-						className='cursor-pointer p-0 uppercase text-xs font-bold hover:text-yellow-101'
-						href={btHeaderOptions.shop}>
-						Shop
-					</a>
-				</div>
-				<div className='pl-3 xl:pl-4 text-xs font-bold relative explore_menu'>
-					<div className='flex items-center cursor-pointer'>
+				{btHeaderOptions?.shop && (
+					<div className='pl-3 xl:pl-4 lg:flex'>
 						<a
-							className='p-0 uppercase text-xs hover:text-yellow-101 menu_text'
-							href={btHeaderOptions.explore}>
-							Explore
+							className='cursor-pointer p-0 uppercase text-xs font-bold hover:text-yellow-101'
+							href={btHeaderOptions.shop}>
+							Shop
 						</a>
-						<DownOutlined className='ml-2 text-xs leading-none' />
 					</div>
-					<div className='absolute explore_submenu_container hidden z-30'>
-						{getExploreMenuOptions()}
+				)}
+				{btHeaderOptions?.explore && (
+					<div className='pl-3 xl:pl-4 text-xs font-bold relative explore_menu'>
+						<div className='flex items-center cursor-pointer'>
+							<a
+								className='p-0 uppercase text-xs hover:text-yellow-101 menu_text'
+								href={btHeaderOptions.explore}>
+								Explore
+							</a>
+							<DownOutlined className='ml-2 text-xs leading-none' />
+						</div>
+						<div className='absolute explore_submenu_container hidden z-30'>
+							{getExploreMenuOptions()}
+						</div>
 					</div>
-				</div>
-				{/* <a className='pl-3 xl:pl-4 flex' href={btHeaderOptions.search}>
-					<Image className='h-4 w-4' src={search} preview={false} />
-				</a> */}
-				<a className='pl-3 xl:pl-4 flex' href={btHeaderOptions.myaccount}>
-					<Image src={my_account_black_icon} preview={false} />
-				</a>
+				)}
+				{/* {btHeaderOptions?.search && (
+					<a className='pl-3 xl:pl-4 flex' href={btHeaderOptions.search}>
+						<Image className='h-4 w-4' src={search} preview={false} />
+					</a>
+				)} */}
+				{btHeaderOptions?.myaccount && (
+					<a className='pl-3 xl:pl-4 flex' href={btHeaderOptions.myaccount}>
+						<Image src={my_account_black_icon} preview={false} />
+					</a>
+				)}
 			</div>
 		</div>
 	);

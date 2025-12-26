@@ -86,13 +86,15 @@ const SimilarProducts = ({
 			placement='bottom'
 			closable={false}
 			onClose={onSimilarClose}
-			visible={showSimilar}
+			open={showSimilar}
 			height={isMobile ? "282px" : "442px"}
-			bodyStyle={{
-				paddingLeft: isMobile ? "12px" : "24px",
-				paddingRight: isMobile ? "12px" : "24px",
-				paddingTop: "24px",
-				paddingBottom: "18px",
+			styles={{
+				body: {
+					paddingLeft: isMobile ? "12px" : "24px",
+					paddingRight: isMobile ? "12px" : "24px",
+					paddingTop: "24px",
+					paddingBottom: "18px",
+				}
 			}}
 			zIndex={SIMILAR_MODAL_Z_INDEX}
 			key='bottom'>

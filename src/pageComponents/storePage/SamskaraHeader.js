@@ -328,17 +328,19 @@ const SamskaraHeader = ({
 	const getSubMenuOptions = (children) => {
 		return (
 			<ul className='z-10 top-3 pb-1.25 pt-2.5 shadow bg-white w-max'>
-				{children.map((subMenu) => (
-					<li key={subMenu.label}>
-						<a
-							className='px-3.5 py-3 flex w-full text-black-101 leading-none'
-							style={{ fontSize: "13px" }}
-							href={subMenu.href}
-							target='_blank'>
-							{subMenu.label}
-						</a>
-					</li>
-				))}
+				{children && children.map((subMenu) => 
+					subMenu && subMenu.href ? (
+						<li key={subMenu.label}>
+							<a
+								className='px-3.5 py-3 flex w-full text-black-101 leading-none'
+								style={{ fontSize: "13px" }}
+								href={subMenu.href}
+								target='_blank'>
+								{subMenu.label}
+							</a>
+						</li>
+					) : null
+				)}
 			</ul>
 		);
 	};

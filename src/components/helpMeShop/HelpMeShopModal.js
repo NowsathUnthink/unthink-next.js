@@ -42,7 +42,7 @@ export default function HelpMeShopModal() {
 		<>
 			<Modal
 				title='Help me Shop'
-				visible={isOpen}
+				open={isOpen}
 				onOk={handleOk}
 				okText='Preview'
 				onCancel={handleCancel}>

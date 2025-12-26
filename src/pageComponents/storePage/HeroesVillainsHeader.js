@@ -287,16 +287,18 @@ const HeroesVillainsHeader = ({
 	const getSubMenuOptions = (children) => {
 		return (
 			<ul className='z-10 top-3 py-4.5 shadow bg-white'>
-				{children.map((subMenu) => (
-					<li key={subMenu.label}>
-						<a
-							className='px-5 py-3 flex w-full text-black-101 leading-none text-base font-light'
-							href={subMenu.href}
-							target='_blank'>
-							{subMenu.label}
-						</a>
-					</li>
-				))}
+				{children && children.map((subMenu) => 
+					subMenu && subMenu.href ? (
+						<li key={subMenu.label}>
+							<a
+								className='px-5 py-3 flex w-full text-black-101 leading-none text-base font-light'
+								href={subMenu.href}
+								target='_blank'>
+								{subMenu.label}
+							</a>
+						</li>
+					) : null
+				)}
 			</ul>
 		);
 	};

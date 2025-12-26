@@ -217,7 +217,7 @@ const CollectionModal = ({ expertUser = {} }) => {
 			title={
 				collectionData.collection_id ? "Edit Collection" : "Create Collection"
 			}
-			visible={showModal}
+			open={showModal}
 			footer={null}
 			onCancel={handleCancel}
 			closable={!isCreating}

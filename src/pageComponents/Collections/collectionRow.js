@@ -254,7 +254,7 @@ const DropdownList = (props) => {
 	};
 	return (
 		<Dropdown
-			visible={isVisible}
+			open={isVisible}
 			destroyPopupOnHide
 			onVisibleChange={(e) => setVisible(e)}
 			overlay={() =>

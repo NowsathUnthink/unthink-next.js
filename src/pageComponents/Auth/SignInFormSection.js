@@ -19,6 +19,7 @@ import {
 
 import { authAPIs } from "../../helper/serverAPIs";
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useNavigate } from "../../helper/useNavigate";
 import {
 	getIdpLoginMethod,
@@ -130,13 +131,12 @@ export const redirectOnSuccessSignIn = (isSellerLoggedIn, userData, redirectPage
 };
 
 
-export default function SignInFormSection({location }) {
+export default function SignInFormSection() {
+    const router = useRouter();
     const navigate = useNavigate();
-    	const [form] = Form.useForm();
-	  console.log('location',location);
-	 const params = new URLSearchParams(location.search);
-     const redirectPage = params.get("page"); 
-      console.log('redirectPage',redirectPage);
+    const [form] = Form.useForm();
+    const params = new URLSearchParams(router.asPath.split('?')[1] || '');
+    const redirectPage = params.get("page");
 
 
 	const [hasError, setHasError] = useState("");

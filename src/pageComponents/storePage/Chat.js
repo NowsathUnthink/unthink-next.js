@@ -401,7 +401,9 @@ const Chat = ({
 
 	// Array of JSX elements representing icons for input box actions, filtering null items of array
 	const inputControls = useMemo(() => {
-		return [micIcon, cameraIcon, searchIcon].filter((icon) => icon !== null);
+		return [micIcon, cameraIcon, searchIcon].filter((icon) => icon !== null).map((icon, index) => (
+			<div key={`input-control-${index}`}>{icon}</div>
+		));
 	}, [micIcon, cameraIcon, searchIcon]);
 
 	return (
